@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" rel="stylesheet">        
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/themes/light.css" />
+  <script type="module" src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2.20.0/cdn/shoelace-autoloader.js"></script>
+
+  
+  <title>Onboard Mate</title>
+  
+  <meta name="author" content="John Burkett">
+  <meta name="description" content="Onboard Mate - A HR Onboarding platform designed for the recruitment industry .">
+  <meta name="keywords" content="Onboarding, Human Resources, Recruitment">
+  
+</head>
+<body>
+<!-- Top Menu with Shoelace Tabs as Navigation -->
+<header class="top-menu">
+    <a href="#" class="logo-link">
+        <div class="logo">
+            <img src="images/logo.png" alt="Onboard Mate Logo">
+        </div>
+    </a>
+    <!-- Shoelace Tabs inside the header -->
+    <sl-tab-group id="menu-tabs">
+        <sl-tab slot="nav" panel="agency">Agency</sl-tab>
+        <sl-tab slot="nav" panel="employer">Employee</sl-tab>
+    </sl-tab-group>
+
+    <sl-button class="demo-button">Demo</sl-button>    
+</header>
+<main>
+<!-- Shoelace Tab Panels  -->
+<sl-tab-group id="content-tabs">
+    <!-- Agency Content -->
+    <sl-tab-panel name="agency">
+       
+            <section class="scrolling-section">
+                <div class="image-slider">
+                    <button id="prevBtn" class="slider-btn">❮</button>
+                    <div class="slider-container">
+                        <img src="images/slide1.jpg" class="slider-img active" alt="Image 1">
+                        <img src="images/slide2.jpg" class="slider-img" alt="Image 2">
+                        <img src="images/slide3.jpg" class="slider-img" alt="Image 3">
+                        <img src="images/slide4.jpg" class="slider-img" alt="Image 4">
+                    </div>
+                    <button id="nextBtn" class="slider-btn">❯</button>
+                </div>
+            </section>
+            <section class="product-facts">
+                <div class="fact-text">
+                    <h2>Designed for Labour Hire</h2>
+                    <p>Onboard Mate streamlines the hiring process, ensuring compliance, easy documentation, and a seamless experience for labour hire companies.</p>
+                </div>
+                <div class="fact-image">
+                    <img src="images/product-info-8.jpg" alt="Labour Hire">
+                </div>
+            </section> 
+            <section class="product-facts reversed">
+                <div class="fact-text">
+                    <h2>User-Friendly Experience</h2>
+                    <p>Built with simplicity in mind, Onboard Mate provides an intuitive interface that makes onboarding employees fast and hassle-free.</p>
+                </div>
+                <div class="fact-image">
+                    <img src="images/product-info-2.jpg" alt="User-Friendly Experience">
+                </div>
+            </section>
+            <section class="product-facts">
+                <div class="fact-text">
+                    <h2>Effortless Setup</h2>
+                    <p>Get started in minutes with a seamless setup process that requires no technical expertise.</p>
+                </div>
+                <div class="fact-image">
+                    <img src="images/product-info-5.jpg" alt="Easy Setup">
+                </div>
+            </section>   
+            <section class="product-facts reversed">
+                <div class="fact-text">
+                    <h2>Compliance & Security</h2>
+                    <p>Ensure compliance with local regulations and keep sensitive employee data secure with industry-leading security protocols.</p>
+                </div>
+                <div class="fact-image">
+                    <img src="images/product-info-7.jpg" alt="Compliance Image">
+                </div>
+            </section>
+            <section class="product-facts">
+                <div class="fact-text">
+                    <h2>Customisable to Your Needs</h2>
+                    <p>Adapt Onboard Mate to your company's specific requirements with flexible settings and integrations.</p>
+                </div>
+                <div class="fact-image">
+                    <img src="images/product-info-4.jpg" alt="Customisable Image">
+                </div>
+            </section>
+    </sl-tab-panel>
+    <!-- Employer Content (Completely Different Data) -->
+    <sl-tab-panel name="employer">
+            <section class="product-facts">
+                <div class="fact-text">
+                    <h2>Employee</h2>
+                <p>Onboard Mate simplifies your onboarding process to ensure accurate details are given to your employer.</p>
+            
+                </div>
+                <div class="fact-image">
+                    <img src="images/product-info-6.jpg" alt="Customisable Image">
+                </div>
+            </section>
+    </sl-tab-panel>
+</sl-tab-group>
+</main>
+
+    <!-- Demo Dialog -->
+  <sl-dialog label="Book a Demo" class="demo-dialog">
+    <div class="demo-content">
+        <h2>Schedule Your Demo</h2>
+        <p>Fill in your details and we’ll be in touch to schedule a time that works for you.</p>
+        
+        <form id="demo-form">
+            <label for="name">Name</label>
+            <sl-input id="name" type="text" placeholder="Your Name" required></sl-input>
+
+            <label for="email">Email</label>
+            <sl-input id="email" type="email" placeholder="Your Email" required></sl-input>
+
+            <label for="company">Company</label>
+            <sl-input id="company" type="text" placeholder="Your Company"></sl-input>
+
+            <label for="date">Preferred Date</label>
+            <sl-input id="date" type="date"></sl-input>
+
+            <sl-button type="submit" variant="primary" class="submit-demo">Submit</sl-button>
+        </form>
+    </div>
+</sl-dialog>
+
+   <!--FOOTER-->
+   <footer id="footer">
+    <div class="footer-container">
+        <a href="index.html" class="footer-logo">
+            <img src="images/logo.png" alt="Website Logo">
+        </a>
+        <div class="footer-social-icons">
+            <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook fa-2x"></i></a>
+            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
+            <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter fa-2x"></i></a>
+            <a href="https://www.bluesky.app" target="_blank"><i class="fab fa-bluesky fa-2x"></i></a>
+        </div>
+        <p class="footer-disclaimer">
+            This website has been created as part of an assignment in an approved course of study for Curtin University and contains copyright material not created by the author. All copyright material used remains copyright of the respective owners and has been used here pursuant to Section 40 of the Copyright Act 1968 (Commonwealth of Australia). No part of this work may be reproduced without consent of the original copyright owners. See code comments for references.
+        </p>
+    </div>
+</footer>
+  <!-- GSAP Library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+  <!-- JavaScript -->
+  <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,415 @@
+/* Reset All */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Remove full-page scrollbar but allow scrolling */
+html, body {
+    overflow: hidden; /* No outer scrollbar */
+    height: 100%;
+}
+
+/* Default Styles */
+body {
+  font-family: 'merriweather', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #2C3E50;
+  color: #2C3E50;
+  overflow: auto; /* Keeps scrolling functional */
+    -ms-overflow-style: none; /* Hide scrollbar in IE and Edge */
+    scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+/* Hide scrollbar for WebKit browsers (Chrome, Safari) */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Main Section */
+/* Set a slightly wider max-width */
+.container {
+  max-width: 1400px; 
+  margin: 0 auto; /* Center content */
+  padding: 0 8%; /* Reduce padding for a wider look */
+}
+
+.logo img {
+  height: 60px; /* Adjust based on preferred size */
+  width: auto; /* Maintain aspect ratio */
+  object-fit: contain;
+  display: block; /* Ensures no extra space around */
+}
+
+/* Top Menu */
+.top-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 8%;
+  background-color: #2C3E50;
+  color: #F2F5F8;
+  max-width: 1400px;
+  width: 100%;
+  margin: auto;
+  min-height: 80px; /* Prevents shrinking */
+}
+
+.menu-links {
+  display: flex;
+  gap: 20px;
+}
+
+.menu-links a {
+  text-decoration: none;
+  color: #F2F5F8;
+  font-weight: bold;
+}
+
+/* Logo Default Styling */
+.logo-link {
+  display: inline-block;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover Effect */
+.logo-link:hover {
+  transform: scale(1.05); /* Slightly enlarge on hover */
+  opacity: 0.8;
+}
+
+
+/* Shoelace Custom Button Colors to match theme */
+:root {
+  --custom-primary-color: #EDFDFA;
+  --custom-primary-hover: #3498DB;
+  --custom-primary-bckground: #2C3E50;
+}
+
+
+.demo-button::part(base) {
+  background-color: var(--custom-primary-color); 
+  color: #2C3E50;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover effect */
+.demo-button::part(base):hover {
+  background-color: var(--custom-primary-hover); 
+  transform: scale(1.05);
+}
+
+/* Active/Pressed effect */
+.demo-button::part(base):active {
+  background-color: #3498DB; 
+}
+
+/* Demo Dialog Popup */
+.demo-dialog::part(base) {
+  color: #2C3E50; 
+  border-radius: 8px;;
+  text-align: center;/* Center the Demo Dialog */
+}
+
+/* Centering Content */
+.demo-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form Styling */
+#demo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+#demo-form label {
+  font-weight: bold;
+  color: #2C3E50;
+  text-align: left;
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Demo Shoelace Inputs */
+sl-input {
+  width: 100%;
+  max-width: 350px;
+}
+
+sl-input::part(base) {
+  background-color: white;
+  border: 1px solid #2C3E50;
+  border-radius: 5px;
+}
+
+/* Demo Submit Button */
+.submit-demo::part(base) {
+  background-color: var(--custom-primary-color); 
+  color: #2C3E50;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 350px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Demo Submit Button Hover */
+.submit-demo::part(base):hover {
+  background-color: var(--custom-primary-hover);
+  transform: scale(1.05);
+}
+
+sl-dialog::part(panel) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Shoelace Tab Navigation */
+sl-tab-group {
+  width: 100%;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+
+/* Style Tab Navigation to Look Like a Menu */
+sl-tab::part(base) {
+  background-color: #2C3E50;
+  color: #F2F5F8;
+  font-size: 20px; 
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+sl-tab::part(base):hover {
+  color: #3498DB;
+  transform: scale(1.05);
+}
+
+/* Active Tab */
+sl-tab[active]::part(base) {
+  background-color: var(--custom-primary-bckground);
+}
+
+/* Tab Panels */
+sl-tab-panel {
+  padding: 20px;
+  overflow: hidden;
+  display: block; /* Ensure tabs do not collapse */
+  visibility: hidden; /* Hide inactive tabs without impacting layout */   
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+/* Show the active tab # only*/
+sl-tab-panel[active] {
+  visibility: visible;
+  position: relative;
+}
+
+/* Scrolling Product Section */
+.scrolling-section {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  padding: 20px 10%;
+  background-color: #18BC9C;
+  max-width: 1200px;
+  margin: auto;
+  overflow: auto; /* Keep scrolling */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; }
+  20% { opacity: 1; } /* Fade in */
+  40% { opacity: 1; } /* Stay visible */
+  60% { opacity: 1; } /* Stay visible */
+  100% { opacity: 0; }/* Fade out */
+}
+
+
+/* Image Slider Container */
+.image-slider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+}
+
+/* Slider Image Container */
+.slider-container {
+  width: 600px;
+  height: 350px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Individual Images */
+.slider-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  position: absolute;
+  animation: fadeInOut 9s infinite; /* Forever looping fade effect */
+}
+
+/* Only show the active image */
+.slider-img.active {
+  display: block;
+  opacity: 1;
+}
+
+/* Slider Buttons */
+.slider-btn {
+  width: 50px; 
+  height: 50px; 
+  background-color: #2C3E50;
+  color: white;
+  border: none;
+  font-size: 24px;display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 50%; /* Makes it a perfect circle */
+  transition: background 0.3s ease;
+}
+
+
+.slider-btn:hover {
+  background-color: #3498DB;
+}
+
+
+/* Product Facts Sections */
+.product-facts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 120px 10%;
+  max-width: 1400px;
+  margin: auto;
+  gap: 80px; 
+  background-color: #EDFDFA;
+}
+
+/* Reverse layout for alternating sections */
+.reversed {
+  flex-direction: row-reverse;
+}
+
+.fact-image {
+  width: 650px; 
+  height: 500px; 
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.fact-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Crops excess parts */
+  border-radius: 10px;
+}
+
+/* Text Styling */
+.fact-text {
+  max-width: 50%; /* Reduce text width to give more space for image */
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+/* ==========FOOTER STYLIING============= */
+#footer {
+  text-align: center;
+  padding: 30px 8%; /* Adjust padding */
+  background-color: #2C3E50;
+  color: #F2F5F8;
+  max-width: 1400px;
+  margin: auto; /* Center it */
+}
+
+.footer-logo img {
+  height: 60px; 
+}
+
+/* Social Media Icons */
+.footer-social-icons {
+  display: flex;
+  justify-content: center; /* Centers  icons */
+  gap: 15px; /* Spacing between icons */
+  margin-top: 10px;
+}
+
+.footer-social-icons i {
+  color: #EDFDFA; 
+  transition: color 0.3s ease, transform 0.3s ease; /* Make colour change animate and not instant */
+}
+
+.footer-social-icons i:hover {
+  color: #3498DB; /* Change colour on hover */
+  transform: scale(1.1); /* Slight zoom effect */
+}
+
+.footer-disclaimer {
+  margin-top: 20px;
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+  color: #F2F5F8; 
+}
+
+/* Small Screen Responsive Adjustments */
+@media (max-width: 768px) {
+  .logo-img {
+     height: 50px; /* Slightly smaller on mobile */
+  }
+
+  .product-facts {
+      flex-direction: column;
+      text-align: center;
+      padding: 60px 5%;
+  }
+
+  .fact-image {
+      width: 350px; /* Maintain square-like shape on smaller screens */
+      height: 300px;
+      margin-bottom: 20px;
+  }
+
+  .fact-text {
+      max-width: 90%;
+      font-size: 1.2rem;
+  }
+}
